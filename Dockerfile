@@ -1,5 +1,4 @@
 FROM tomcat:8.5
-WORKDIR /usr/src/app
 MAINTAINER Chid Adaikappan <chadadaikappan@gmail.com>
 
 # Debugging tools: A few ways to handle debugging tools.
