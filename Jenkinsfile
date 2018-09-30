@@ -1,10 +1,11 @@
-pipeline {
-
-    agent any
-
-    stage('Build') {
-  
-        sh 'mvn --version'
-      
+pipeline { 
+    agent any  
+    stages { 
+        stage('Build') { 
+            steps { 
+               echo 'This is a minimal pipeline.'
+                sh 'mvn --version'
+            }
+        }
     }
 }
