@@ -8,5 +8,21 @@ pipeline {
                 sh 'mvn package'
             }
         }
+
+        stage('Build Docker Image') {
+            when {
+                branch 'master'
+            }
+            steps {
+                script {
+                    app = docker.build("veer/java-demo")
+                    app.inside {
+                        sh 'echo $(curl localhost:8080)'
+                    }
+                }
+            }
+        }
+
+
     }
 }
